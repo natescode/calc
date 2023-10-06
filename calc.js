@@ -25,6 +25,35 @@ function calc(expression) {
         });
         buildNumber = "";
       }
+    } else if ("+-*/".includes(currentChar)) {
+      // OPERATORS
+      switch (currentChar) {
+        case "+":
+          tokens.push({
+            type: "plus",
+            value: currentChar,
+          });
+          break;
+
+        case "-":
+          tokens.push({
+            type: "minus",
+            value: currentChar,
+          });
+          break;
+        case "*":
+          tokens.push({
+            type: "mult",
+            value: currentChar,
+          });
+          break;
+        case "/":
+          tokens.push({
+            type: "div",
+            value: currentChar,
+          });
+          break;
+      }
     } else {
       tokens.push({
         type: "ILLEGAL",
